@@ -1,0 +1,13 @@
+<div class="btn-container">
+  <button
+    type="{{ buttonType }}"
+    class="btn {{ buttonType }}"
+    [class.disabled]="isDisabled"
+    [class.autoWidth]="width === 'auto'"
+    [class.fontBigger]="isFontSizeBigger"
+    (click)="onBtnClicked($event)"
+  >
+    <mat-icon *ngIf="buttonIcon">{{ buttonIcon }}</mat-icon>
+    {{ buttonTitle }}
+  </button>
+</div>

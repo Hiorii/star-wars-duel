@@ -1,0 +1,7 @@
+.btn {
+  @apply text-white font-bold py-4 px-8 rounded transition duration-500 transition-box-shadow;
+}
+
+.primary {
+  @apply bg-[#FFE81F] text-black shadow-button-shape hover:shadow-button-shape-hover;
+}

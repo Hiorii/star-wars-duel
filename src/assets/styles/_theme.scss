@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@import "palette";
+@import "@angular/material/theming";
+
+@include mat.core();
+
+$primary: mat.define-palette($md-palette, 500);
+$accent: mat.define-palette($md-accent);
+
+$star_wars_duel_theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+  )
+));
+
+@include mat.core-theme($star_wars_duel_theme);
