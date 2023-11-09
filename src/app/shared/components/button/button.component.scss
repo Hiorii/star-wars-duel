@@ -3,5 +3,5 @@
 }
 
 .primary {
-  @apply bg-[#FFE81F] text-black shadow-button-shape hover:shadow-button-shape-hover;
+  @apply bg-[#FFE81F] text-black text-2xl shadow-button-shape hover:shadow-button-shape-hover hover:text-shadow-custom;
 }

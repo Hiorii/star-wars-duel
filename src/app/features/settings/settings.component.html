@@ -1,0 +1,14 @@
+<div class="w-full h-full flex justify-center items-center">
+  <app-card class="shadow-button-shape" [orientation]="OrientationEnum.horizontal" width="45rem" height="auto">
+    <app-title [title]="'Settings'" [stroke]="StrokeTypesEnum.textStrokeBlack"></app-title>
+    <app-tabs [tabsData]="tabsData"></app-tabs>
+  </app-card>
+</div>
+
+<ng-template #userTab>
+  <p>dupa</p>
+</ng-template>
+
+<ng-template #generalTab>
+  dupa2
+</ng-template>
