@@ -5,6 +5,7 @@ import { TabsDataModel } from '../../shared/components/tabs/models/tabs-data.mod
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SessionService } from '../../shared/services/session.service';
 import { AudioService } from 'src/app/shared/services/audio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -25,7 +26,8 @@ export class SettingsComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder,
     private cdRef: ChangeDetectorRef,
     private sessionService: SessionService,
-    private audioService: AudioService
+    private audioService: AudioService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -100,5 +102,9 @@ export class SettingsComponent implements OnInit, AfterViewInit {
         this.audioService.stopAudio();
       }
     });
+  }
+
+  backToMainScreen(): void {
+    this.router.navigate(['/']);
   }
 }
