@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-screen',
@@ -7,16 +7,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./start-screen.component.scss']
 })
 export class StartScreenComponent {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
+
   handleMenuBtnClick(menuOption: string): void {
-    console.log(menuOption)
-    switch(menuOption) {
+    switch (menuOption) {
       case 'game':
-        this.router.navigate(['game'])
+        this.router.navigate(['game']);
         break;
       case 'settings':
-        this.router.navigate(['settings'])
+        this.router.navigate(['settings']);
         break;
     }
   }

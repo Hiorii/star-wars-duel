@@ -1,5 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { AudioService } from './shared/services/audio.service';
+import { SessionService } from './shared/services/session.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,19 @@ import { DOCUMENT } from '@angular/common';
 export class AppComponent implements OnInit {
   title = 'star-wars-duel';
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private audioService: AudioService,
+    private sessionService: SessionService
+  ) {}
 
   ngOnInit(): void {
+    this.initApp();
+  }
+
+  private initApp(): void {
     this.generateBackgroundStars();
+    this.handleMusic();
   }
 
   private generateBackgroundStars(): void {
@@ -27,11 +38,21 @@ export class AppComponent implements OnInit {
     }
 
     function getRandomPosition() {
-      const x = window.innerWidth;
-      const y = window.innerHeight;
+      const y = window.innerWidth;
+      const x = window.innerHeight;
       const randomX = Math.floor(Math.random() * x);
       const randomY = Math.floor(Math.random() * y);
       return [randomX, randomY];
+    }
+  }
+
+  handleMusic(): void {
+    const sound = this.sessionService.get('sound');
+    const mainMusicThemePath = '/assets/files/sounds/main.mp3';
+    if (sound === 'true') {
+      this.audioService.playAudio(mainMusicThemePath);
+    } else {
+      this.audioService.stopAudio();
     }
   }
 }

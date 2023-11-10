@@ -1,0 +1,11 @@
+<mat-form-field>
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <input
+    matInput
+    class="formInput"
+    [formControl]="ngControl.control | asFormControl"
+    [placeholder]="placeholder"
+    [type]="type"
+    (keydown)="handleKeydown($event)"
+  />
+</mat-form-field>

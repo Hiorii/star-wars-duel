@@ -1,0 +1,19 @@
+.formInput {
+  @apply py-2;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background: var(--secondary-color) !important;
+}
+
+mat-label {
+  color: var(--primary-color) !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--primary-color) !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
