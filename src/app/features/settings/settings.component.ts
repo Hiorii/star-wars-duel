@@ -6,6 +6,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { SessionService } from '../../shared/services/session.service';
 import { AudioService } from 'src/app/shared/services/audio.service';
 import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { SetUserName } from './store/settings.actions';
 
 @Component({
   selector: 'app-settings',
@@ -27,7 +29,8 @@ export class SettingsComponent implements OnInit, AfterViewInit {
     private cdRef: ChangeDetectorRef,
     private sessionService: SessionService,
     private audioService: AudioService,
-    private router: Router
+    private router: Router,
+    private store: Store
   ) {}
 
   ngOnInit(): void {
@@ -61,6 +64,7 @@ export class SettingsComponent implements OnInit, AfterViewInit {
     this.isUserEdited = false;
     this.currentUser = this.userForm.get('userName')?.value;
     this.sessionService.set('userName', this.currentUser);
+    this.store.dispatch(new SetUserName(this.currentUser));
   }
 
   loadSettings(): void {
@@ -76,6 +80,7 @@ export class SettingsComponent implements OnInit, AfterViewInit {
       this.isUserEdited = false;
       this.currentUser = user;
       this.userForm.get('userName')?.setValue(user);
+      this.store.dispatch(new SetUserName(user));
     }
   }
 

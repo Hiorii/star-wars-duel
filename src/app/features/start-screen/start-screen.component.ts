@@ -12,7 +12,7 @@ export class StartScreenComponent {
   handleMenuBtnClick(menuOption: string): void {
     switch (menuOption) {
       case 'game':
-        this.router.navigate(['game']);
+        this.router.navigate(['mode']);
         break;
       case 'settings':
         this.router.navigate(['settings']);

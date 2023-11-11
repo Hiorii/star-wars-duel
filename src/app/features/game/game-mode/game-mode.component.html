@@ -1,1 +1,42 @@
-<p>game-mode works!</p>
+<div class="w-full h-full flex justify-center items-center">
+  <div class="flex mr-20">
+    <app-game-card [frontCard]="frontCardStarship" [backCard]="backCardStarship" [cardHeight]="300" [cardWidth]="200"></app-game-card>
+    <ng-template #frontCardStarship>
+      <div class="w-full h-full relative">
+        <img src="assets/files/images/card/starship.jpg" alt="starship" class="h-full w-full opacity-70" />
+        <p class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary text-3xl">Starships</p>
+      </div>
+    </ng-template>
+    <ng-template #backCardStarship>
+      <div class="w-full h-full flex justify-center items-center flex-col backCard">
+        <p class="py-8 px-4 text-center text-xl">Epic battle between starships in the skies...</p>
+        <div
+          class="border-2 border-white rounded px-8 py-2 text-2xl bg-secondary hover:bg-white hover:border-secondary hover:text-secondary"
+          (click)="selectMode(GameModeEnum.Starship); $event.stopPropagation()"
+        >
+          Select
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="flex">
+    <app-game-card [frontCard]="frontCardPeople" [backCard]="backCardPeople" [cardHeight]="300" [cardWidth]="200"></app-game-card>
+    <ng-template #frontCardPeople>
+      <div class="w-full h-full relative">
+        <img src="assets/files/images/card/people.jpg" alt="people" class="h-full w-full opacity-70" />
+        <p class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary text-3xl">People</p>
+      </div>
+    </ng-template>
+    <ng-template #backCardPeople>
+      <div class="w-full h-full flex justify-center items-center flex-col backCard">
+        <p class="py-8 px-4 text-center text-xl">Epic battle between heroes from whole galaxy...</p>
+        <div
+          class="border-2 border-white rounded px-8 py-2 text-2xl bg-secondary hover:bg-white hover:border-secondary hover:text-secondary"
+          (click)="selectMode(GameModeEnum.People); $event.stopPropagation()"
+        >
+          Select
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

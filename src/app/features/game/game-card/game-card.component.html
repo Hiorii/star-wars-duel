@@ -1,0 +1,10 @@
+<div #card class="card">
+  <div #cardInner class="card__inner" (click)="flipCard()">
+    <div class="card__face card__face--front">
+      <ng-container *ngTemplateOutlet="frontCard"></ng-container>
+    </div>
+    <div class="card__face card__face--back">
+      <ng-container *ngTemplateOutlet="backCard"></ng-container>
+    </div>
+  </div>
+</div>
