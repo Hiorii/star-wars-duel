@@ -1,1 +1,8 @@
-<p>game works!</p>
+<div class="w-full h-full flex justify-center items-center flex-col">
+  <div class="flex justify-around items-center pt-12 w-[85%]">
+    <app-title [title]="userName"></app-title>
+    <app-title [title]="'Computer'"></app-title>
+  </div>
+  <app-game-board class="w-full h-full flex justify-center items-center"></app-game-board>
+  <app-button class="w-56" [buttonTitle]="'Fight!'" [buttonType]="'primary'" (onBtnClick)="startFight()"></app-button>
+</div>

@@ -1,0 +1,32 @@
+.board {
+  @apply relative flex justify-center items-center overflow-hidden rounded;
+  width: 85%;
+  height: 90%;
+  z-index: 9;
+}
+
+.board::before {
+  @apply absolute bg-white;
+  width: 120%;
+  height: 72%;
+  content: '';
+  box-shadow: 0 0 5px #FFE81F, 0 0 25px #FFE81F, 0 0 50px #FFE81F, 0 0 100px #FFE81F;
+  animation: animate 22s normal infinite;
+}
+
+.board::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  background: linear-gradient(90deg, rgba(110, 113, 59, 1) 0%, rgba(28, 28, 26, 1) 50%, rgba(110, 113, 59, 1) 100%);
+  border-radius: 16px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

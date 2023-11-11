@@ -8,9 +8,17 @@ import { CommonModule } from '@angular/common';
 import { NgxsModule } from '@ngxs/store';
 import { GameState } from './store/game.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { GameBoardModule } from './game-board/game-board.module';
 
 @NgModule({
-  imports: [SharedModule, GameModeModule, CommonModule, NgxsModule.forFeature([GameState]), NgxsReduxDevtoolsPluginModule.forRoot()],
+  imports: [
+    SharedModule,
+    GameModeModule,
+    CommonModule,
+    NgxsModule.forFeature([GameState]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    GameBoardModule
+  ],
   declarations: [GameComponent, GameModeComponent, GameCardComponent]
 })
 export class GameModule {}
