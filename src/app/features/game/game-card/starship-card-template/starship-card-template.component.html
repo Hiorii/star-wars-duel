@@ -1,0 +1,27 @@
+<div class="w-full h-full bg-secondary flex justify-center items-center">
+  <ng-container *ngIf="cardData">
+    <div #cardContainer class="w-[95%] h-[97%] rounded-xl flex flex-col justify-between items-center" [style.background-color]="cardColor">
+      <div class="box boxTop flex justify-between items-center px-4">
+        <p class="text-white text-xl font-bold">{{ cardData.properties.name }}</p>
+        <div class="score text-secondary bg-white text-xl font-bold border-1 border-white p-2" [class.scoreWinner]="isCardWinner">
+          {{ cardData.properties.crew !== "unknown" ? cardData.properties.crew : 75 }}
+        </div>
+      </div>
+      <div class="box boxImage">
+        <img src="assets/files/images/card/starships/{{ cardData.properties.name }}.jpg" alt="starship_card" class="w-full h-full" />
+      </div>
+      <div class="box boxBottom flex flex-col">
+        <p class="text-center italic py-6 px-2">{{ cardData.description }}</p>
+        <p class="px-4">
+          Class: <span class="pl-2 font-bold">{{ cardData.properties.starship_class }}</span>
+        </p>
+        <p class="px-4 py-4">
+          Cost: <span class="pl-2 font-bold">{{ cardData.properties.cost_in_credits }}</span>
+        </p>
+        <p class="px-4">
+          Length: <span class="pl-2 font-bold">{{ cardData.properties.length }}</span>
+        </p>
+      </div>
+    </div>
+  </ng-container>
+</div>

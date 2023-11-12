@@ -9,6 +9,8 @@ import { NgxsModule } from '@ngxs/store';
 import { GameState } from './store/game.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { GameBoardModule } from './game-board/game-board.module';
+import { PlayerCardTemplateComponent } from './game-card/player-card-template/player-card-template.component';
+import { StarshipCardTemplateComponent } from './game-card/starship-card-template/starship-card-template.component';
 
 @NgModule({
   imports: [
@@ -19,6 +21,6 @@ import { GameBoardModule } from './game-board/game-board.module';
     NgxsReduxDevtoolsPluginModule.forRoot(),
     GameBoardModule
   ],
-  declarations: [GameComponent, GameModeComponent, GameCardComponent]
+  declarations: [GameComponent, GameModeComponent, GameCardComponent, PlayerCardTemplateComponent, StarshipCardTemplateComponent]
 })
 export class GameModule {}

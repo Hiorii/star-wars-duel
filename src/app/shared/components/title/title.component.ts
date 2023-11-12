@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {StrokeTypesEnum} from "./models/stroke-types.enum";
+import { Component, Input } from '@angular/core';
+import { StrokeTypesEnum } from './models/stroke-types.enum';
 
 @Component({
   selector: 'app-title',
@@ -7,6 +7,6 @@ import {StrokeTypesEnum} from "./models/stroke-types.enum";
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent {
-  @Input({ required: true }) title: string = ''
-  @Input() stroke: StrokeTypesEnum = StrokeTypesEnum.textStrokeWhite
+  @Input({ required: true }) title: string = '';
+  @Input() stroke: StrokeTypesEnum = StrokeTypesEnum.textStrokeYellow;
 }

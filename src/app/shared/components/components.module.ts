@@ -13,13 +13,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AsFormControl } from '../pipes/as-form-control.pipe';
 import { SlideToogleComponent } from './slide-toogle/slide-toogle.component';
+import { BackToMenuComponent } from './back-to-menu/back-to-menu.component';
 
 const MaterialComponents = [MatButtonModule, MatIconModule, MatCardModule, MatTabsModule, MatInputModule];
 const components = [ButtonComponent, TitleComponent, CardComponent, TabsComponent, SlideToogleComponent, InputComponent];
 
 @NgModule({
-  declarations: [...components, AsFormControl],
+  declarations: [...components, AsFormControl, BackToMenuComponent],
   imports: [...MaterialComponents, CommonModule, ReactiveFormsModule, FormsModule],
-  exports: [...MaterialComponents, ...components]
+  exports: [...MaterialComponents, ...components, BackToMenuComponent]
 })
 export class ComponentsModule {}

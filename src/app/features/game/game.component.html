@@ -1,8 +1,91 @@
 <div class="w-full h-full flex justify-center items-center flex-col">
   <div class="flex justify-around items-center pt-12 w-[85%]">
-    <app-title [title]="userName"></app-title>
-    <app-title [title]="'Computer'"></app-title>
+    <div class="flex flex-col justify-center items-center">
+      <app-title [title]="userName"></app-title>
+      <p class="text-2xl">Score: {{ userScore }}</p>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+      <app-title [title]="'Computer'"></app-title>
+      <p class="text-2xl">Score: {{ pcScore }}</p>
+    </div>
   </div>
-  <app-game-board class="w-full h-full flex justify-center items-center"></app-game-board>
-  <app-button class="w-56" [buttonTitle]="'Fight!'" [buttonType]="'primary'" (onBtnClick)="startFight()"></app-button>
+  <app-game-board class="w-full h-full flex justify-center items-center">
+    <div
+      #gameBoard
+      class="w-full h-full flex justify-center items-center"
+      [class.cardContainer]="isPlayerWinner && this.isCardFlipped === 'Yes'"
+    >
+      <app-game-card
+        [frontCard]="frontCardPlayer"
+        [backCard]="backCardPlayer"
+        [cardHeight]="cardHeight"
+        [cardWidth]="cardWidth"
+        [isCardFlipped]="isCardFlipped"
+        class="h-full flex justify-center items-center pointer-events-none"
+      ></app-game-card>
+      <ng-template #frontCardPlayer>
+        <div class="w-full h-full flex justify-center items-center flex-col backCard">
+          <img src="assets/files/images/card/back_star.png" alt="back_card_start_wars" class="h-full w-full" />
+        </div>
+      </ng-template>
+      <ng-template #backCardPlayer>
+        <div class="w-full h-full flex justify-center items-center flex-col backCard">
+          <ng-container *ngIf="gameMode === GameModeEnum.People">
+            <app-player-card-template
+              class="w-full h-full"
+              [card]="playerPeopleCard"
+              [isWinner]="isPlayerWinner"
+            ></app-player-card-template>
+          </ng-container>
+          <ng-container *ngIf="gameMode === GameModeEnum.Starship">
+            <app-starship-card-template
+              class="w-full h-full"
+              [card]="playerStarshipCard"
+              [isWinner]="isPlayerWinner"
+            ></app-starship-card-template>
+          </ng-container>
+        </div>
+      </ng-template>
+    </div>
+    <div *ngIf="isCounterStart">
+      <p class="text-transparent text-[6rem] text-center uppercase text-stroke-yellow counter">{{ counterNumber }}</p>
+    </div>
+    <div
+      *ngIf="(isPcWinner || isPlayerWinner) && this.isCardFlipped === 'Yes'"
+      class="text-transparent text-[2rem] text-center uppercase text-stroke-white winner max-w-[10%]"
+    >
+      <p *ngIf="isPlayerWinner">{{ userName }} won!</p>
+      <p *ngIf="isPcWinner">Computer won!</p>
+    </div>
+    <div class="w-full h-full flex justify-center items-center" [class.cardContainer]="isPcWinner && this.isCardFlipped === 'Yes'">
+      <app-game-card
+        [frontCard]="frontCardPc"
+        [backCard]="backCardPc"
+        [cardHeight]="cardHeight"
+        [cardWidth]="cardWidth"
+        [isCardFlipped]="isCardFlipped"
+        class="h-full flex justify-center items-center pointer-events-none"
+      ></app-game-card>
+      <ng-template #frontCardPc>
+        <div class="w-full h-full flex justify-center items-center flex-col backCard">
+          <img src="assets/files/images/card/back_star.png" alt="back_card_start_wars" class="h-full w-full" />
+        </div>
+      </ng-template>
+      <ng-template #backCardPc>
+        <div class="w-full h-full flex justify-center items-center flex-col backCard">
+          <ng-container *ngIf="gameMode === GameModeEnum.People">
+            <app-player-card-template class="w-full h-full" [card]="pcPeopleCard" [isWinner]="isPcWinner"></app-player-card-template>
+          </ng-container>
+          <ng-container *ngIf="gameMode === GameModeEnum.Starship">
+            <app-starship-card-template class="w-full h-full" [card]="pcStarshipCard" [isWinner]="isPcWinner"></app-starship-card-template>
+          </ng-container>
+        </div>
+      </ng-template>
+    </div>
+  </app-game-board>
+  <div class="flex justify-center items-center">
+    <app-button class="w-56 mr-16" [buttonTitle]="'Fight!'" [buttonType]="'primary'" (onBtnClick)="startFight()"></app-button>
+    <app-button class="w-56" [buttonTitle]="'Reset score!'" [buttonType]="'secondary'" (onBtnClick)="resetScore()"></app-button>
+  </div>
 </div>
+<app-back-to-menu></app-back-to-menu>

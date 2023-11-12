@@ -1,0 +1,38 @@
+.counter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: fontbulger 2s infinite;
+}
+
+.winner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cardContainer {
+  animation: sizechange 1s infinite;
+}
+
+@keyframes sizechange {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fontbulger {
+  0%, 100% {
+    font-size: 6rem;
+  }
+
+  50% {
+    font-size: 10rem;
+  }
+}

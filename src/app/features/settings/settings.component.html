@@ -1,9 +1,5 @@
 <div class="w-full h-full flex justify-center items-center">
   <app-card class="shadow-button-shape" [orientation]="OrientationEnum.horizontal" width="45rem" height="auto">
-    <div class="flex justify-start items-center text-secondary text-xl hover:font-bold" (click)="backToMainScreen()">
-      <mat-icon>arrow_left</mat-icon>
-      <span>Back</span>
-    </div>
     <app-title [title]="'Settings'" [stroke]="StrokeTypesEnum.textStrokeBlack"></app-title>
     <app-tabs [tabsData]="tabsData"></app-tabs>
   </app-card>
@@ -30,3 +26,4 @@
     </div>
   </form>
 </ng-template>
+<app-back-to-menu></app-back-to-menu>

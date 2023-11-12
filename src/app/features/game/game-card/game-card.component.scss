@@ -6,7 +6,7 @@
 }
 
 .card {
-  margin: 100px auto 0;
+  margin: 0;
   width: 400px;
   height: 600px;
   perspective: 1000px;
@@ -34,7 +34,7 @@
   backface-visibility: hidden;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 
 .card__face--front {
@@ -74,7 +74,7 @@
   bottom: 0;
   background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
   z-index: -1;
-  border-radius: 0px 0px 50% 0px;
+  border-radius: 0 0 50% 0;
 }
 
 .pp {

@@ -108,8 +108,4 @@ export class SettingsComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
-  backToMainScreen(): void {
-    this.router.navigate(['/']);
-  }
 }

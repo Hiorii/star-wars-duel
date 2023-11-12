@@ -1,0 +1,37 @@
+.box {
+  @apply w-[94%] rounded;
+}
+
+.boxTop {
+  @apply h-[10%] mt-[3%] bg-secondary;
+  box-shadow: 0 7px 18px -2px rgba(66, 68, 90, 1);
+
+  .score {
+    border-radius: 50%;
+  }
+
+  .scoreWinner {
+    @apply text-warning;
+    animation: fontbulger 1s infinite;
+  }
+}
+
+.boxImage {
+  @apply h-[45%] mt-[3%];
+  box-shadow: 0 7px 18px -2px rgba(66, 68, 90, 1);
+}
+
+.boxBottom {
+  @apply h-[35%] mb-[3%] bg-secondary;
+  box-shadow: 0 7px 18px -2px rgba(66, 68, 90, 1);
+}
+
+@keyframes fontbulger {
+  0%, 100% {
+    font-size: 1.25rem;
+  }
+
+  50% {
+    font-size: 1.75rem;
+  }
+}
