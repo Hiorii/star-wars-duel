@@ -2,6 +2,11 @@
   <div class="w-[30rem] flex flex-col justify-center items-center">
     <app-title [title]="'Star Wars Duel'"></app-title>
     <app-button class="w-full" [buttonType]="'primary'" [buttonTitle]="'Start Game'" (onBtnClick)="handleMenuBtnClick('game')"></app-button>
-    <app-button class="w-full" [buttonType]="'primary'" [buttonTitle]="'Settings'" (onBtnClick)="handleMenuBtnClick('settings')"></app-button>
+    <app-button
+      class="w-full"
+      [buttonType]="'secondary'"
+      [buttonTitle]="'Settings'"
+      (onBtnClick)="handleMenuBtnClick('settings')"
+    ></app-button>
   </div>
 </div>

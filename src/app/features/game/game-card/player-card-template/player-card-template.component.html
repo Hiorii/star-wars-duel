@@ -2,7 +2,7 @@
   <ng-container *ngIf="cardData">
     <div #cardContainer class="w-[95%] h-[97%] rounded-xl flex flex-col justify-between items-center" [style.background-color]="cardColor">
       <div class="box boxTop flex justify-between items-center px-4">
-        <p class="text-white text-xl font-bold">{{ cardData.properties.name }}</p>
+        <p class="text-white text-xl font-bold truncate">{{ cardData.properties.name }}</p>
         <div class="score text-secondary bg-white text-xl font-bold border-1 border-white p-2" [class.scoreWinner]="isCardWinner">
           {{ cardData.properties.mass !== "unknown" ? cardData.properties.mass : 75 }}
         </div>
@@ -11,15 +11,15 @@
         <img src="assets/files/images/card/people/{{ cardData.properties.name }}.jpg" alt="hero_card" class="w-full h-full" />
       </div>
       <div class="box boxBottom flex flex-col">
-        <p class="text-center italic py-6 px-2">{{ cardData.description }}</p>
+        <p class="text-center italic py-6 px-2 truncate">{{ cardData.description }}</p>
         <p class="px-4">
-          Gender: <span class="pl-2 font-bold">{{ cardData.properties.gender }}</span>
+          Gender: <span class="pl-2 font-bold truncate">{{ cardData.properties.gender }}</span>
         </p>
         <p class="px-4 py-4">
-          Birth: <span class="pl-2 font-bold">{{ cardData.properties.birth_year }}</span>
+          Birth: <span class="pl-2 font-bold truncate">{{ cardData.properties.birth_year }}</span>
         </p>
         <p class="px-4">
-          Height: <span class="pl-2 font-bold">{{ cardData.properties.height }}</span>
+          Height: <span class="pl-2 font-bold truncate">{{ cardData.properties.height }}</span>
         </p>
       </div>
     </div>

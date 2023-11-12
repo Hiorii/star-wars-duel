@@ -1,7 +1,7 @@
 <div class="w-full h-full flex justify-center items-center flex-col">
   <div class="flex justify-around items-center pt-12 w-[85%]">
     <div class="flex flex-col justify-center items-center">
-      <app-title [title]="userName"></app-title>
+      <app-title class="max-w-[35rem]" [title]="userName"></app-title>
       <p class="text-2xl">Score: {{ userScore }}</p>
     </div>
     <div class="flex flex-col justify-center items-center">
@@ -51,11 +51,12 @@
       <p class="text-transparent text-[6rem] text-center uppercase text-stroke-yellow counter">{{ counterNumber }}</p>
     </div>
     <div
-      *ngIf="(isPcWinner || isPlayerWinner) && this.isCardFlipped === 'Yes'"
+      *ngIf="(isPcWinner || isPlayerWinner || isDraw) && this.isCardFlipped === 'Yes'"
       class="text-transparent text-[2rem] text-center uppercase text-stroke-white winner max-w-[10%]"
     >
       <p *ngIf="isPlayerWinner">{{ userName }} won!</p>
       <p *ngIf="isPcWinner">Computer won!</p>
+      <p *ngIf="isDraw">Draw!</p>
     </div>
     <div class="w-full h-full flex justify-center items-center" [class.cardContainer]="isPcWinner && this.isCardFlipped === 'Yes'">
       <app-game-card
@@ -84,7 +85,13 @@
     </div>
   </app-game-board>
   <div class="flex justify-center items-center">
-    <app-button class="w-56 mr-16" [buttonTitle]="'Fight!'" [buttonType]="'primary'" (onBtnClick)="startFight()"></app-button>
+    <app-button
+      class="w-56 mr-16"
+      [buttonTitle]="'Fight!'"
+      [buttonType]="'primary'"
+      [isDisabled]="isFightButtonDisabled"
+      (onBtnClick)="startFight()"
+    ></app-button>
     <app-button class="w-56" [buttonTitle]="'Reset score!'" [buttonType]="'secondary'" (onBtnClick)="resetScore()"></app-button>
   </div>
 </div>

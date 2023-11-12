@@ -5,8 +5,14 @@
 
 .primary {
   @apply bg-primary text-black text-2xl shadow-button-shape hover:shadow-button-shape-hover hover:text-shadow-custom;
+  &.disabled {
+    @apply pointer-events-none text-[#7E7D7D] bg-[#FFF8C5];
+  }
 }
 
 .secondary {
   @apply bg-white text-black text-2xl shadow-button-shape-secondary hover:shadow-button-shape-secondary-hover hover:text-shadow-custom;
+  &.disabled {
+    @apply pointer-events-none text-[#7E7D7D] bg-[#FFF8C5];
+  }
 }

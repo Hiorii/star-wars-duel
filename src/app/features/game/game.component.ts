@@ -47,6 +47,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   userScore: number = 0;
   pcScore: number = 0;
   GameModeEnum = GameModeEnum;
+  isFightButtonDisabled = false;
 
   constructor(
     private store: Store,
@@ -73,7 +74,6 @@ export class GameComponent implements OnInit, AfterViewInit {
   listenToGameModeChange(): void {
     this.gameMode$.pipe(takeUntilDestroyed(this.destroyRef), filter(Boolean)).subscribe((gameMode) => {
       this.gameMode = gameMode;
-      console.log(this.gameMode);
     });
   }
 
@@ -150,6 +150,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   startFight(): void {
     const playerAndPcIds =
       this.gameMode === GameModeEnum.People ? this.getUniqueIdCardForPlayerAndPc() : this.getUniqueIdCardStarshipForPlayerAndPc();
+    this.isFightButtonDisabled = true;
     this.playerPeopleCard = null;
     this.pcPeopleCard = null;
     this.playerStarshipCard = null;
@@ -211,6 +212,7 @@ export class GameComponent implements OnInit, AfterViewInit {
       if (this.isPlayerWinner) {
         this.userScore += 1;
       }
+      this.isFightButtonDisabled = false;
     }, 6000);
   }
 
