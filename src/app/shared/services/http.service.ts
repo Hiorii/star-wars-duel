@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  private baseUrl = 'https://www.swapi.tech/api';
+  baseUrl = 'https://www.swapi.tech/api';
 
   constructor(private http: HttpClient) {}
 

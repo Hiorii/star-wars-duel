@@ -6,12 +6,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() buttonType: string = 'primary';
-  @Input() buttonTitle: string = 'click';
+  @Input({ required: true }) buttonType: string = 'primary';
+  @Input({ required: true }) buttonTitle: string = 'click';
   @Input() buttonIcon: string = '';
   @Input() isDisabled: boolean = false;
   @Input() width: string = 'full';
-  @Input() isFontSizeBigger: boolean = false;
   @Output() onBtnClick: EventEmitter<any> = new EventEmitter();
 
   onBtnClicked(event: any) {

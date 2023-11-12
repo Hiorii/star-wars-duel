@@ -1,10 +1,9 @@
 <div class="py-8">
   <button
     type="{{ buttonType }}"
-    class="btn {{ buttonType }} w-{{width}}"
+    class="btn {{ buttonType }} w-{{ width }}"
     [class.disabled]="isDisabled"
     [class.autoWidth]="width === 'auto'"
-    [class.fontBigger]="isFontSizeBigger"
     (click)="onBtnClicked($event)"
   >
     <mat-icon *ngIf="buttonIcon">{{ buttonIcon }}</mat-icon>

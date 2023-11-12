@@ -3,8 +3,7 @@ import { StrokeTypesEnum } from './models/stroke-types.enum';
 
 @Component({
   selector: 'app-title',
-  templateUrl: './title.component.html',
-  styleUrls: ['./title.component.scss']
+  templateUrl: './title.component.html'
 })
 export class TitleComponent {
   @Input({ required: true }) title: string = '';
