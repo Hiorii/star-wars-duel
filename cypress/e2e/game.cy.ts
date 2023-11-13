@@ -15,6 +15,6 @@ describe('Game', () => {
     cy.contains(userName).should('exist');
     cy.get('button').contains('Fight').click();
     cy.wait(7000);
-    c;
+    cy.get('.card__inner').should('have.class', 'is-flipped');
   });
 });
