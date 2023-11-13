@@ -12,7 +12,6 @@
     "noImplicitReturns": true,
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -31,5 +30,10 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": [
+    "./cypress.config.ts",
+    "cypress",
+    "**/*.cy.ts"
+  ]
 }

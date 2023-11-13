@@ -19,6 +19,7 @@ export class InputComponent {
   @Input() label: string = '';
   @Input() placeholder = '';
   @Input() type = 'text';
+  @Input() name = '';
 
   constructor(@Self() public ngControl: NgControl) {}
 

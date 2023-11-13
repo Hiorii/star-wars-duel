@@ -7,7 +7,7 @@
 
 <ng-template #userTab>
   <form [formGroup]="userForm" class="mt-8 w-full flex justify-between flex-col items-center pt-8">
-    <app-input *ngIf="isUserEdited" class="w-full" formControlName="userName" label="Your name..."></app-input>
+    <app-input *ngIf="isUserEdited" class="w-full" formControlName="userName" label="Your name..." [name]="'userName'"></app-input>
     <div *ngIf="!isUserEdited" class="w-full flex justify-center items-center text-secondary">
       <p class="text-2xl truncate">
         Your name: <span class="text-3xl">{{ currentUser }}</span>

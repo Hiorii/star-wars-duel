@@ -47,6 +47,14 @@ describe('InputComponent', () => {
     expect(input.type).toBe(type);
   });
 
+  it('should set the input name correctly', () => {
+    const name = 'testName';
+    component.type = name;
+    fixture.detectChanges();
+    const input = fixture.nativeElement.querySelector('input');
+    expect(input.name).toBe(name);
+  });
+
   it('should prevent default behavior for "e" keydown when type is number', () => {
     component.type = 'number';
     fixture.detectChanges();
