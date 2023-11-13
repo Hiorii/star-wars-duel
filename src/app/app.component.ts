@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     this.handleMusic();
   }
 
-  private generateBackgroundStars(): void {
+  generateBackgroundStars(): void {
     const numStars = 100;
 
     for (let i = 0; i < numStars; i++) {

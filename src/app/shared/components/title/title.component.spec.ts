@@ -25,7 +25,7 @@ describe('TitleComponent', () => {
     component.title = text;
     fixture.detectChanges();
     const titleElement = fixture.debugElement.query(By.css('h1'));
-    expect(titleElement.nativeElement.textContent).toBe(text);
+    expect(titleElement.nativeElement.textContent.trim()).toBe(text);
   });
 
   it('should render the title text with stroke class', () => {

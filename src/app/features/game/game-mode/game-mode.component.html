@@ -11,7 +11,7 @@
       <div class="w-full h-full flex justify-center items-center flex-col backCard">
         <p class="py-8 px-4 text-center text-xl">Epic battle between starships in the skies...</p>
         <div
-          class="border-2 border-white rounded px-8 py-2 text-2xl bg-secondary hover:bg-white hover:border-secondary hover:text-secondary"
+          class="border-2 border-white rounded px-8 py-2 text-2xl bg-secondary hover:bg-white hover:border-secondary hover:text-secondary starshipButton"
           (click)="selectMode(GameModeEnum.Starship); $event.stopPropagation()"
         >
           Select
@@ -31,7 +31,7 @@
       <div class="w-full h-full flex justify-center items-center flex-col backCard">
         <p class="py-8 px-4 text-center text-xl">Epic battle between heroes from whole galaxy...</p>
         <div
-          class="border-2 border-white rounded px-8 py-2 text-2xl bg-secondary hover:bg-white hover:border-secondary hover:text-secondary"
+          class="border-2 border-white rounded px-8 py-2 text-2xl bg-secondary hover:bg-white hover:border-secondary hover:text-secondary peopleButton"
           (click)="selectMode(GameModeEnum.People); $event.stopPropagation()"
         >
           Select

@@ -4,7 +4,7 @@ import { StrokeTypesEnum } from '../../shared/components/title/models/stroke-typ
 import { TabsDataModel } from '../../shared/components/tabs/models/tabs-data.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SessionService } from '../../shared/services/session.service';
-import { AudioService } from 'src/app/shared/services/audio.service';
+import { AudioService } from '../../shared/services/audio.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { SetUserName } from './store/settings.actions';
