@@ -4,10 +4,11 @@ import { StartScreenComponent } from './start-screen/start-screen.component';
 import { GameComponent } from './game/game.component';
 import { SettingsComponent } from './settings/settings.component';
 import { GameModeComponent } from './game/game-mode/game-mode.component';
+import { gameModeGuard } from '../shared/guards/game-mode.guard';
 
 const routes: Routes = [
   { path: 'start', component: StartScreenComponent },
-  { path: 'game', component: GameComponent },
+  { path: 'game', component: GameComponent, canActivate: [gameModeGuard] },
   { path: 'mode', component: GameModeComponent },
   { path: 'settings', component: SettingsComponent },
   { path: '**', redirectTo: 'start', pathMatch: 'full' }

@@ -3,6 +3,9 @@ import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AudioService } from './shared/services/audio.service';
 import { SessionService } from './shared/services/session.service';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { NgxsModule } from '@ngxs/store';
+import { SettingsState } from './features/settings/store/settings.state';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -20,7 +23,7 @@ describe('AppComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, NgxsRouterPluginModule.forRoot(), NgxsModule.forRoot([SettingsState], { developmentMode: true })],
       declarations: [AppComponent],
       providers: [
         { provide: AudioService, useValue: mockAudioService },

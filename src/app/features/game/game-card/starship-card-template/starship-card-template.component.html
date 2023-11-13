@@ -10,15 +10,14 @@
       <div class="box boxImage">
         <img src="assets/files/images/card/starships/{{ cardData.properties.name }}.jpg" alt="starship_card" class="w-full h-full" />
       </div>
-      <div class="box boxBottom flex flex-col">
-        <p class="text-center italic py-6 px-2 truncate">{{ cardData.description }}</p>
-        <p class="px-4">
+      <div class="box boxBottom flex flex-col justify-center">
+        <p class="px-4 flex">
           Class: <span class="pl-2 font-bold truncate">{{ cardData.properties.starship_class }}</span>
         </p>
-        <p class="px-4 py-4">
+        <p class="px-4 py-4 flex">
           Cost: <span class="pl-2 font-bold truncate">{{ cardData.properties.cost_in_credits }}</span>
         </p>
-        <p class="px-4">
+        <p class="px-4 flex">
           Length: <span class="pl-2 font-bold truncate">{{ cardData.properties.length }}</span>
         </p>
       </div>

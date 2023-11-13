@@ -18,7 +18,8 @@
       <app-game-card
         [frontCard]="frontCardPlayer"
         [backCard]="backCardPlayer"
-        [cardHeight]="cardHeight"
+        [cardHeight]="85"
+        [heightUnit]="SizeUnitsEnum.percent"
         [cardWidth]="cardWidth"
         [isCardFlipped]="isCardFlipped"
         class="h-full flex justify-center items-center pointer-events-none"
@@ -62,7 +63,8 @@
       <app-game-card
         [frontCard]="frontCardPc"
         [backCard]="backCardPc"
-        [cardHeight]="cardHeight"
+        [cardHeight]="85"
+        [heightUnit]="SizeUnitsEnum.percent"
         [cardWidth]="cardWidth"
         [isCardFlipped]="isCardFlipped"
         class="h-full flex justify-center items-center pointer-events-none"

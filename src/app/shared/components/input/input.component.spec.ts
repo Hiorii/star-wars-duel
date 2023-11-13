@@ -49,7 +49,7 @@ describe('InputComponent', () => {
 
   it('should set the input name correctly', () => {
     const name = 'testName';
-    component.type = name;
+    component.name = name;
     fixture.detectChanges();
     const input = fixture.nativeElement.querySelector('input');
     expect(input.name).toBe(name);

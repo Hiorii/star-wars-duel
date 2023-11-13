@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { AudioService } from './shared/services/audio.service';
 import { SessionService } from './shared/services/session.service';
+import { SetUserName } from './features/settings/store/settings.actions';
+import { Store } from '@ngxs/store';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,8 @@ export class AppComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private audioService: AudioService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private store: Store
   ) {}
 
   ngOnInit(): void {
@@ -23,6 +26,14 @@ export class AppComponent implements OnInit {
   private initApp(): void {
     this.generateBackgroundStars();
     this.handleMusic();
+    this.checkIfUserExists();
+  }
+
+  checkIfUserExists(): void {
+    const user = this.sessionService.get('userName') || '';
+    if (!user) return;
+
+    this.store.dispatch(new SetUserName(user));
   }
 
   generateBackgroundStars(): void {

@@ -10,15 +10,14 @@
       <div class="box boxImage">
         <img src="assets/files/images/card/people/{{ cardData.properties.name }}.jpg" alt="hero_card" class="w-full h-full" />
       </div>
-      <div class="box boxBottom flex flex-col">
-        <p class="text-center italic py-6 px-2 truncate">{{ cardData.description }}</p>
-        <p class="px-4">
+      <div class="box boxBottom flex flex-col justify-center">
+        <p class="px-4 flex">
           Gender: <span class="pl-2 font-bold truncate">{{ cardData.properties.gender }}</span>
         </p>
-        <p class="px-4 py-4">
+        <p class="px-4 py-4 flex">
           Birth: <span class="pl-2 font-bold truncate">{{ cardData.properties.birth_year }}</span>
         </p>
-        <p class="px-4">
+        <p class="px-4 flex">
           Height: <span class="pl-2 font-bold truncate">{{ cardData.properties.height }}</span>
         </p>
       </div>

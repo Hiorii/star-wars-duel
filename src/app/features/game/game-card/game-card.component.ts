@@ -1,4 +1,5 @@
 import { AfterContentChecked, Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/core';
+import { SizeUnitsEnum } from './models/size-units.enum';
 
 @Component({
   selector: 'app-game-card',
@@ -10,6 +11,8 @@ export class GameCardComponent implements AfterContentChecked {
   @ViewChild('card') card: ElementRef;
   @Input() frontCard: TemplateRef<any>;
   @Input() backCard: TemplateRef<any>;
+  @Input() widthUnit: SizeUnitsEnum = SizeUnitsEnum.px;
+  @Input() heightUnit: SizeUnitsEnum = SizeUnitsEnum.px;
 
   @Input() set isCardFlipped(isFlipped: string) {
     if (isFlipped) {
@@ -34,8 +37,8 @@ export class GameCardComponent implements AfterContentChecked {
 
   ngAfterContentChecked(): void {
     if (this.card) {
-      if (this._cardHeight) this.card.nativeElement.style.height = `${this._cardHeight}px`;
-      if (this._cardWidth) this.card.nativeElement.style.width = `${this._cardWidth}px`;
+      if (this._cardHeight) this.card.nativeElement.style.height = `${this._cardHeight}${this.heightUnit}`;
+      if (this._cardWidth) this.card.nativeElement.style.width = `${this._cardWidth}${this.widthUnit}`;
     }
   }
 

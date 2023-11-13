@@ -9,6 +9,7 @@ import { ClearGameCardData, GetPeopleCardData, GetStarshipCardData } from './sto
 import { PlayerTypesEnum } from './models/player-types.enum';
 import { PeopleCardModel } from './models/people-card.model';
 import { StarshipCardModel } from './models/starship-card.model';
+import { SizeUnitsEnum } from './game-card/models/size-units.enum';
 
 @Component({
   selector: 'app-game',
@@ -47,6 +48,7 @@ export class GameComponent implements OnInit, AfterViewInit {
   userScore: number = 0;
   pcScore: number = 0;
   GameModeEnum = GameModeEnum;
+  SizeUnitsEnum = SizeUnitsEnum;
   isFightButtonDisabled = false;
 
   constructor(
@@ -59,7 +61,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     this.listenToGameModeChange();
     this.listenToPeopleCardChange();
     this.listenToStarshipCardChange();
-    this.userName = this.store.selectSnapshot(SettingsState.userName) ?? '';
+    this.userName = this.store.selectSnapshot(SettingsState.userName) ?? 'Player';
   }
 
   ngAfterViewInit(): void {
