@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-screen',
-  templateUrl: './start-screen.component.html',
-  styleUrls: ['./start-screen.component.scss']
+  templateUrl: './start-screen.component.html'
 })
 export class StartScreenComponent {
   constructor(private router: Router) {}
