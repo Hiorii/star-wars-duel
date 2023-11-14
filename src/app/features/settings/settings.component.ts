@@ -60,7 +60,8 @@ export class SettingsComponent implements OnInit, AfterViewInit {
 
   saveUserSettings(): void {
     this.isUserEdited = false;
-    this.currentUser = this.userForm.get('userName')?.value;
+    this.currentUser = this.userForm.get('userName')?.value || 'Player';
+    console.log(this.currentUser);
     this.sessionService.set('userName', this.currentUser);
     this.store.dispatch(new SetUserName(this.currentUser));
   }
